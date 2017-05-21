@@ -36,6 +36,8 @@ class Home: UIViewController {
     
     @IBAction func unwindToHome2(segue:UIStoryboardSegue) {}
     
+    // Setting the data from the segue frm alarm
+    
     private var _alarmSeg = Date()
     var alarmSeg : Date {
         get {
@@ -48,6 +50,8 @@ class Home: UIViewController {
     
     @IBAction func clearButton(_ sender: UIBarButtonItem) {
         
+        // Unwind segue to clear any alarms added
+        
         performSegue(withIdentifier: "unwindToHome2", sender: self)
     }
    
@@ -56,9 +60,13 @@ class Home: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Editing attributes of nav bar
+        
         navigationController?.navigationBar.barTintColor = UIColor.black
         
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        
+        // Setting formatters for dates
         
         let format = DateFormatter()
         format.timeStyle = .short
@@ -69,7 +77,9 @@ class Home: UIViewController {
       
        
         
-       
+       // Checking if view is the first in view controller
+        
+        // If it's the initial screen, hide alarm label and switch etc
         
         if self.navigationController?.viewControllers.index(of: self) == 0 {
             rec.isHidden = true
@@ -77,6 +87,8 @@ class Home: UIViewController {
             displayAlarm2.isHidden = true
             
         }
+            
+            
             
         else {
             rec.isHidden = false
@@ -90,12 +102,12 @@ class Home: UIViewController {
         
         
         
-       
+       // Timer to check if alarm matches current time
         
         alarmTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(alarmAlert), userInfo: nil, repeats: true)
         
         
-        
+        // Setting alarm time to label
         displayAlarm2.text = format.string(from:_alarmSeg)
        
         
@@ -110,7 +122,7 @@ class Home: UIViewController {
     
         
     
-    
+    // Creating alert
     
     
     func createAlert (titleText : String , messageText : String) {
@@ -128,7 +140,7 @@ class Home: UIViewController {
     }
     
   
-    
+  
     
     func alarmAlert(){
         
@@ -140,6 +152,7 @@ class Home: UIViewController {
         
         var currentDate = Date()
         
+        // Checking if the alarm switch is set to on
        
         if showSw.isOn {
         
@@ -147,6 +160,9 @@ class Home: UIViewController {
         
         var alarmStr = formatter2.string(from: _alarmSeg)
             
+              // Checking if the alarm matches the current time
+            
+            // Display alert and play alarm sound
     
     if alarmStr == formatter.string(from: currentDate) {
     createAlert(titleText: "Alarm", messageText: "Alarm message")

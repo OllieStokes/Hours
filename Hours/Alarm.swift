@@ -26,7 +26,7 @@ class Alarm: UIViewController {
     var alarmTimer: Timer!
     
 
-
+    // Button that either segues to the clock class or home class with the alarm time value from date picker based on the value from the alarm clock mode switch
     @IBAction func doneButton(_ sender: UIBarButtonItem) {
         
         let formatter = DateFormatter()
@@ -56,7 +56,13 @@ class Alarm: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // changing text color for date picker
         timePicker.setValue(UIColor.white, forKeyPath: "textColor")
+        
+        
+        // Timer to check if alarm matches current time
+    
         alarmTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timePickerValue), userInfo: nil, repeats: true)
         
         
@@ -72,7 +78,7 @@ class Alarm: UIViewController {
     
     var currentDate = Date()
     
-   
+   // creating alert
     func createAlert (titleText : String, messageText : String) {
         let alert = UIAlertController(title: titleText, message: messageText, preferredStyle: .alert)
         
@@ -86,7 +92,7 @@ class Alarm: UIViewController {
         
     }
 
-    
+    // Getting value from datepicker
     
     @IBAction func timePickerValue(_ sender: Any) {
         
@@ -100,7 +106,7 @@ class Alarm: UIViewController {
         
         
     
-     
+     // checking if alarm time matches current time
         
         if formatter.string(for: alarmTime) == formatter.string(for: currentDate) {
             createAlert(titleText: "Alarm", messageText: "Alarm message")
@@ -110,7 +116,7 @@ class Alarm: UIViewController {
         
     }
     
-    
+    // preparing for segue to other classes
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if sleepSwitch.isOn {
@@ -145,6 +151,7 @@ class Alarm: UIViewController {
 
     
     
+    // dismiss timer
     override func viewWillDisappear(_ animated: Bool) {
         
         alarmTimer.invalidate()

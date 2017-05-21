@@ -22,13 +22,13 @@ class Clock: UIViewController {
     
  
 
-
+    // Back button uses and unwind segue to go home when finished
         
     @IBAction func backButton(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "unwindToHome", sender: self)
         
     }
-        
+        // getting data from segue
     
     private var _alarmSeg = Date()
     var alarmSeg : Date {
@@ -45,7 +45,7 @@ class Clock: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        // formatting dates
        
         let format = DateFormatter()
         format.timeStyle = .short
@@ -54,7 +54,7 @@ class Clock: UIViewController {
         
         format2.dateStyle = .full
 
-        
+        // setting labels
         
         TimeLabel.text = format.string(from: Date())
         
@@ -63,7 +63,7 @@ class Clock: UIViewController {
         alarmLabel.text = ("Alarm: " + format.string(from: alarmSeg))
         
         
-        
+        // timer to check when alarm is triggered and get current time for alarm clock
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GetTime), userInfo: nil, repeats: true)
     
         
@@ -77,6 +77,8 @@ class Clock: UIViewController {
     
     @IBOutlet weak var DateLabel: UILabel!
     @IBOutlet var alarmLabel: UILabel!
+    
+    // dismissing timer
     
     override func viewWillDisappear(_ animated: Bool) {
         
@@ -97,7 +99,7 @@ class Clock: UIViewController {
 
  
 
-        
+        // setting labels
         
         TimeLabel.text = format.string(from: Date())
         
@@ -115,6 +117,8 @@ class Clock: UIViewController {
         
         var alarmStr = formatter2.string(from: _alarmSeg)
         
+        // if alarm time matches current time, play alarm, change background and font colour
+        
         if alarmStr == formatter.string(for: currentDate) {
             
            
@@ -127,10 +131,12 @@ class Clock: UIViewController {
             
             
             
-            
+          
             
             createAlert(titleText: "Alarm", messageText: "Good Morning")
             let alarmSound = Bundle.main.url(forResource: "AlarmS", withExtension: "mp3")!
+            
+            // play alarm sound
             
             do {
                 player = try AVAudioPlayer(contentsOf: alarmSound)
@@ -147,7 +153,7 @@ class Clock: UIViewController {
  
         
     }
-
+  // create alert
     
     func createAlert (titleText : String , messageText : String) {
         let alert = UIAlertController(title: titleText, message: messageText, preferredStyle: .alert)
