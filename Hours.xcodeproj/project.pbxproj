@@ -8,20 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		5542A11D1EC4609200E25634 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542A11C1EC4609200E25634 /* AppDelegate.swift */; };
-		5542A11F1EC4609200E25634 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542A11E1EC4609200E25634 /* ViewController.swift */; };
+		5542A11F1EC4609200E25634 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542A11E1EC4609200E25634 /* Home.swift */; };
 		5542A1221EC4609200E25634 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5542A1201EC4609200E25634 /* Main.storyboard */; };
 		5542A1241EC4609200E25634 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5542A1231EC4609200E25634 /* Assets.xcassets */; };
 		5542A1271EC4609200E25634 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5542A1251EC4609200E25634 /* LaunchScreen.storyboard */; };
+		55464C631ED18090007E27D3 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55464C621ED18090007E27D3 /* Weather.swift */; };
+		558888841EC841A2009CB2A1 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558888831EC841A2009CB2A1 /* Alarm.swift */; };
+		558888861EC8503E009CB2A1 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558888851EC8503E009CB2A1 /* Clock.swift */; };
+		55C5CB081ECDD42200C0CE87 /* AlarmS.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 55C5CB071ECDD42200C0CE87 /* AlarmS.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5542A1191EC4609200E25634 /* Hours.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hours.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5542A11C1EC4609200E25634 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5542A11E1EC4609200E25634 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5542A11E1EC4609200E25634 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		5542A1211EC4609200E25634 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5542A1231EC4609200E25634 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5542A1261EC4609200E25634 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5542A1281EC4609200E25634 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55464C621ED18090007E27D3 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		558888831EC841A2009CB2A1 /* Alarm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
+		558888851EC8503E009CB2A1 /* Clock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
+		55C5CB071ECDD42200C0CE87 /* AlarmS.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = AlarmS.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,8 +63,12 @@
 			isa = PBXGroup;
 			children = (
 				5542A11C1EC4609200E25634 /* AppDelegate.swift */,
-				5542A11E1EC4609200E25634 /* ViewController.swift */,
+				5542A11E1EC4609200E25634 /* Home.swift */,
+				558888831EC841A2009CB2A1 /* Alarm.swift */,
+				558888851EC8503E009CB2A1 /* Clock.swift */,
 				5542A1201EC4609200E25634 /* Main.storyboard */,
+				55464C621ED18090007E27D3 /* Weather.swift */,
+				55C5CB071ECDD42200C0CE87 /* AlarmS.mp3 */,
 				5542A1231EC4609200E25634 /* Assets.xcassets */,
 				5542A1251EC4609200E25634 /* LaunchScreen.storyboard */,
 				5542A1281EC4609200E25634 /* Info.plist */,
@@ -124,6 +136,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55C5CB081ECDD42200C0CE87 /* AlarmS.mp3 in Resources */,
 				5542A1271EC4609200E25634 /* LaunchScreen.storyboard in Resources */,
 				5542A1241EC4609200E25634 /* Assets.xcassets in Resources */,
 				5542A1221EC4609200E25634 /* Main.storyboard in Resources */,
@@ -137,8 +150,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5542A11F1EC4609200E25634 /* ViewController.swift in Sources */,
+				5542A11F1EC4609200E25634 /* Home.swift in Sources */,
 				5542A11D1EC4609200E25634 /* AppDelegate.swift in Sources */,
+				558888861EC8503E009CB2A1 /* Clock.swift in Sources */,
+				558888841EC841A2009CB2A1 /* Alarm.swift in Sources */,
+				55464C631ED18090007E27D3 /* Weather.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +318,7 @@
 				5542A12D1EC4609200E25634 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
