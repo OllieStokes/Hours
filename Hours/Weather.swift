@@ -14,7 +14,6 @@ class Weather: UIViewController, UISearchBarDelegate{
     @IBOutlet var cityLabel: UILabel!
     @IBOutlet var degreeLabel: UILabel!
     @IBOutlet var conditionLabel: UILabel!
-    @IBOutlet var imgView: UIImageView!
     @IBOutlet var currentWeather: UILabel!
     
 
@@ -103,7 +102,7 @@ class Weather: UIViewController, UISearchBarDelegate{
                             self.degreeLabel.isHidden = true
                            
                             self.conditionLabel.isHidden = true
-                            self.imgView.isHidden = true
+                            
                              self.cityLabel.text = "No matching city"
                             self.exists = true
                         }
